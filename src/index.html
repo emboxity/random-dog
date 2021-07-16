@@ -1,0 +1,48 @@
+<!-- Creator: Embox -->
+<!-- Version: 1.0 -->
+
+<html>
+  
+  <head><link rel="stylesheet" href="style.css"></head>
+  <script script type="text/javascript" src="lightMode.js"></script>
+  <script script type="text/javascript" src="darkMode.js"></script>
+ 
+
+    <body>
+  <ul>
+    <li><a class="active" href="https://github.com/emboxity/random-dog">Random Dogs</a>
+        <li><a href="https://randomcatgen.netlify.app">Random Cats</a></li>
+      <img onclick="lightMode()" id="light-mode" src="lightMode.png" alt="light" class="lmode" width="25" height="25" />
+      <img onclick="darkMode()" id="dark-mode" src="darkMode.png" alt="dark" class="dmode" width="25" height="25" style="display:none"/>
+    </li>
+
+  </ul>
+
+
+  <h1 class="desc">Random dog images!</h1>
+  <h1 class="info">Click the button below for a random dog image.
+
+
+  </h1>
+
+  <button onclick = "dogFunction()" class="button">Click me for a dog!</button>
+  <script src="dog.js"></script>
+
+  <img id="dog-img" src="https://dog.ceo/api/breeds/image/random" alt="dog" class="center" />
+  
+  <script>
+  const dog = document.getElementById("dog-img");
+  fetch('https://dog.ceo/api/breeds/image/random')
+  .then(response => response.json())
+  .then(data => dog.src = data.message);
+  </script>
+
+
+<p class="footer">RandomDogs - Made by Emboxity</p>
+
+
+
+
+
+</body>
+</html>
